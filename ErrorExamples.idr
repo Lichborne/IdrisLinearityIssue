@@ -24,7 +24,7 @@ v >>= f =  MkLST  $ \i => let (a # m) = runLStateT i v in runLStateT a (f m)
 interface AbstractInterface (0 t : Nat -> Type) where
         run : LStateT (t m) (t m) (LVect n Nat) -@ (LVect n Nat)
   
-||| someother abstract interface
+||| some other abstract interface
 interface OuterInterface (0 t : Nat -> Type) where
         |||some function from LVect to LStateT
         outerFunc : {n : Nat} -> {i : Nat} -> (LVect i Nat) -@ LStateT (t n) (t n) (LVect i Nat)
