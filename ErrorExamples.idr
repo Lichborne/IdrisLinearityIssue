@@ -41,7 +41,7 @@ innerFuncDummy : AbstractInterface t => (i : Nat) -> (m: Nat) -> LVect i Nat -@ 
 innerFuncDummy 0 m any = pure any
 innerFuncDummy (S k) m (q::qs) = pure (q::qs)   
 
-||| Then, we attempt to first used the above, and then take the LVect out and move it up and do something with it in the outer interface
+||| Then, we attempt to first use the above, and then take the LVect out and move it up and do something with it in the outer interface
 ||| This fails to check that qs is linear
 doubleLayerFunc : OuterInterface t => (n : Nat) -> (m: Nat) -> LVect n Nat -@ LStateT (t (m)) (t (m)) (LVect n Nat)
 doubleLayerFunc 0 m [] = pure []
