@@ -29,7 +29,7 @@ interface OuterInterface (0 t : Nat -> Type) where
         |||some function from LVect to LStateT
         outerFunc : {n : Nat} -> {i : Nat} -> (LVect i Nat) -@ LStateT (t n) (t n) (LVect i Nat)
 
-||| This works as it should (dummy in this case, but compiles)
+||| NOT NEEDED FOR EXAMPLE, just illustration; this works as it should (dummy in this case, but compiles)
 singleLayerFunc : OuterInterface t => (n : Nat) -> (m: Nat) -> LVect n Nat -@ LStateT (t (m)) (t (m)) (LVect n Nat)
 singleLayerFunc 0 m [] = pure []
 singleLayerFunc (S k) m qs = do
